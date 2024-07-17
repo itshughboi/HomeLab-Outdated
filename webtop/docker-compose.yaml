@@ -1,0 +1,19 @@
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop:latest
+    container_name: webtop
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Denver
+     # - SUBFOLDER=/ #optional
+     # - TITLE=Webtop #optional
+    volumes:
+      - ./webtop/config:/config
+      - /var/run/docker.sock:/var/run/docker.sock #optional
+    ports:
+      - 3310:3000 #HTTP
+      - 3311:3001 #HTTPS
+    restart: unless-stopped
