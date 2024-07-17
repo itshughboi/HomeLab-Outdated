@@ -1,6 +1,15 @@
 services:
   webtop:
-    image: lscr.io/linuxserver/webtop:latest
+    image: lscr.io/linuxserver/webtop:debian-kde
+    #version tag changes the linux image:
+    #common tags:
+      # fedora-kde
+      # arch-kde
+      # ubuntu-kde
+      # arch-i3
+      # debian-i3
+      # fedora-i3
+      # debian-xfce
     container_name: webtop
     security_opt:
       - seccomp:unconfined #optional
