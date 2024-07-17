@@ -1,0 +1,406 @@
+- Management:
+
+    - Pve-srv-1:
+        icon: proxmox.png
+        href: https://pve-srv-1.hughboi.cc
+        description: 10.10.10.2:8006
+        siteMonitor: https://10.10.10.2:8006
+        widget: 
+            type: proxmox
+            url: https://10.10.10.2:8006
+            username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
+            password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+            node: pve-srv-1
+            fields: ["vms", "resources.cpu", "resources.mem"]
+
+
+    - Pve-srv-2:
+        icon: proxmox.png
+        href: https://pve-srv-2.hughboi.cc
+        description: 10.10.10.3:8006
+        siteMonitor: https://10.10.10.3:8006
+        widget:
+            type: proxmox
+            url: https://10.10.10.3:8006
+            username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
+            password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+            node: pve-srv-2
+            fields: ["vms", "resources.cpu", "resources.mem"]
+
+
+    - OPNSense:
+        icon: opnsense.png
+        href: https://opnsense.hughboi.cc
+        siteMonitor: https://10.10.10.1
+        description: 10.10.10.1
+        widget:
+            type: opnsense
+            url: https://10.10.10.1
+            username: {{HOMEPAGE_VAR_OPNSENSE_USERNAME}}
+            password: {{HOMEPAGE_VAR_OPNSENSE_PASSWORD}}
+            fields: ["cpu", "memory", "wanDownload",]
+
+
+    - Portainer:
+        href: https://portainer.hughboi.cc
+        icon: portainer.png
+        siteMonitor: https://10.10.10.10:9443
+        description: 10.10.10.10:9443
+        widget:
+            type: portainer
+            url: https://10.10.10.10:9443
+            env: 2
+            key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+
+
+    - Homepage VPN:
+        href: http://ubnt-prod:3335
+        icon: homepage.png
+        siteMonitor: http://10.10.10.10:3335
+        description: 10.10.10.10:3335
+
+
+
+
+- Networking: 
+
+    - Unifi:
+        icon: unifi.png
+        href: https://unifi.hughboi.cc
+        siteMonitor: https://10.10.10.10:8443
+        description: 10.10.10.10:8443
+        widget:
+            type: unifi
+            url: https://10.10.10.10:8443
+            username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
+            password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
+            fields: ["wlan", "wlan_devices", "wlan_users"]
+
+
+    - Adguard:
+        href: https://adguard.hughboi.cc
+        siteMonitor: http://10.10.10.1:8091
+        description: dns // 10.10.10.1:8091
+        icon: adguard-home.png
+        widget:
+            type: adguard
+            url: http://10.10.10.1:8091
+            username:
+            password:
+            fields: ["queries", "blocked", "latency"]
+
+
+    - Tailscale:
+        href: https://login.tailscale.com/admin/machines
+        icon: tailscale.png
+        description: ubnt-prod
+        widget:
+            type: tailscale
+            deviceid:
+            key: {{HOMEPAGE_VAR_TAILSCALE_KEY}}
+            fields: ["address", "last_seen",]
+
+
+    - Netbird:
+        href: https://app.netbird.io
+        icon: netbird.png
+        description: Mesh VPN
+
+    
+    - Zerotier:
+        href: https://my.zerotier.com/
+        icon: zerotier.png
+        description: Mesh VPN
+
+
+
+
+
+
+- Data:
+
+    - TrueNAS:
+        icon: truenas.png
+        href: https://10.10.10.5
+        siteMonitor: https://10.10.10.5
+        description: 10.10.10.5
+        widget:
+            type: truenas
+            url: https://10.10.10.5
+            key: {{HOMEPAGE_VAR_TRUENAS_KEY}} # not required if using username / password
+            enablePools: true # optional, defaults to false
+
+
+    - Proxmox Backup Server:
+        icon: proxmox.png
+        href: https://pbs.hughboi.cc/
+        description: 10.10.10.152:8007
+        siteMonitor: https://10.10.10.152:8007
+        widget:
+            type: proxmoxbackupserver
+            url: https://10.10.10.152:8007
+            username: {{HOMEPAGE_VAR_PBS_USERNAME}}
+            password: {{HOMEPAGE_VAR_PBS_PASSWORD}}
+            fields: ["datastore_usage", "failed_tasks_24h", "memory_usage"]
+
+
+    - Nextcloud:
+         href: https://nextcloud.hughboi.cc
+         icon: nextcloud.png
+         description: 10.10.10.10:9103
+         siteMonitor: http://10.10.10.10:9103
+
+
+    - Diskover:
+        icon: diskover.png
+        href: https://diskover.hughboi.cc
+        siteMonitor: http://10.10.10.5:22510
+        description: 10.10.10.5:22510
+
+
+    - InfluxDB:
+        icon: influxdb.png
+        href:
+        description:
+        siteMonitor:
+
+
+
+
+
+
+- Security: 
+    - Nginx Proxy Manager:
+            href: https://proxy.hughboi.cc
+            icon: nginx-proxy-manager.svg
+            description: 10.10.10.10:81
+            siteMonitor: http://10.10.10.10:81/
+            widget:
+                type: npm
+                url: http://10.10.10.10:81
+                username:
+                password:
+
+
+    - Wazuh:
+        href: https://wazuh.hughboi.cc
+        description: 10.10.10.10:9999
+        siteMonitor: https://10.10.10.10:9999
+        icon: wazuh.png
+
+
+    - Teleport:
+        href: https://teleport.hughboi.cc
+        icon: teleport.png
+        description: 10.10.10.10:3080
+        siteMonitor: https://10.10.10.10:3080
+
+
+    - Authentik:
+        href: https://authentik.hughboi.cc
+        icon: authentik-light.png
+        description: 10.10.10.10:445
+        siteMonitor: https://10.10.10.10:445
+        # widget:
+        #     type: authentik
+        #     url: https://10.10.10.10:445
+        #     key: #{{HOMEPAGE_VAR_AUTHENTIK_KEY}}
+
+
+    # - XPipe:
+    #     icon: xpipe-io.png
+    #     href: 
+    #     description:
+
+
+    - VaultWarden:
+        href: https://vaultwarden.hughboi.cc
+        icon: bitwarden.png
+        description: 10.10.10.10:8082
+        siteMonitor: http://10.10.10.10:8082
+     
+
+    - Webmin Production:
+        href: https://webmin-production.hughboi.cc
+        icon: webmin.png 
+        description: 10.10.10.10:10000 #UNIX GUI // Production
+        siteMonitor: https://10.10.10.10:10000
+
+
+    - Webmin Staging:
+        href: https://webmin-staging.hughboi.cc
+        icon: webmin.png 
+        description: 10.10.10.20:10000 #UNIX GUI // Staging
+        siteMonitor: https://10.10.10.20:10000
+
+
+    - WatchYourLAN:
+        href: https://lan.hughboi.cc
+        icon: watchyourlan.png
+        description: 10.10.10.10:8840
+        siteMonitor: http://10.10.10.10:8840
+
+
+
+
+
+
+- Apps: 
+    - Immich:
+        href: http://10.10.10.5:30041
+        icon: immich.png
+        description: 10.10.10.5:30041
+        siteMonitor: http://10.10.10.5:30041
+        widget:
+            type: immich
+            url: http://10.10.10.5:30041
+            key: {{HOMEPAGE_VAR_IMMICH_KEY}}
+
+        
+    - Kasm:
+        href: https://100.123.230.2:443 #https://kasm.hughboi.cc
+        icon: kasm.png
+        description: 10.10.10.80:443
+        siteMonitor: https://10.10.10.80:443 
+        #email for admin is admin@kasm.local
+
+
+    - Webtop:
+        href: https://10.10.10.10:3311 #webtop.hughboi.cc
+        icon: webtop.png
+        description: 10.10.10.10:3311
+        siteMonitor: http://10.10.10.10:3310
+
+
+    - Whoogle:
+        href: https://whoogle.hughboi.cc
+        icon: google.png
+        description: 10.10.10.10:5000
+        siteMonitor: http://10.10.10.10:5000
+
+
+    - Speedtest-tracker:
+        href: https://speed.hughboi.cc
+        icon: speedtest-tracker.png
+        description: 10.10.10.10:8765
+        siteMonitor: http://10.10.10.10:8765
+
+    - Syncthing:
+        href: https://syncthing.hughboi.cc
+        icon: syncthing.png
+        description: 10.10.10.10:8384
+        siteMonitor: http://10.10.10.10:8384
+
+
+
+
+- Monitoring:
+    
+    - Uptime-Kume:
+        href: https://uptime-kuma.hughboi.cc
+        icon: uptime-kuma.png
+        description: 10.10.10.10:3001
+        siteMonitor: https://uptime-kuma.hughboi.cc
+        widget:
+            type: uptimekuma
+            url: http://10.10.10.10:3001
+            slug: homepage
+            # fields: ["up", "down", "uptime", "incident"]
+
+
+    - Prometheus:
+        href: https://prometheus.hughboi.cc
+        icon: prometheus.png
+        siteMonitor: http://10.10.10.10:9091
+        description: 10.10.10.10:9091
+        widget:
+            type: prometheus
+            url: http://10.10.10.10:9091
+
+
+    - Grafana:
+        href: https://grafana.hughboi.cc
+        icon: grafana.png
+        siteMonitor: http://10.10.10.10:3000
+        description: 10.10.10.10:3000
+        widget:
+            type: grafana
+            url: http://10.10.10.10:3000
+            username:
+            password:
+
+
+    - Loki:
+        href: #https://loki.hughboi.cc haven't figured out how to redirect to /metrics or /ready
+        description: 10.10.10.10:3100
+        icon: loki.png
+        siteMonitor: http://10.10.10.10:3100/metrics
+
+    
+    - Syslog-ng:
+        href:
+        description:
+        icon: syslog-ng.png
+        siteMonitor:
+
+    - Netdata:
+        icon: netdata.png
+        href: https://netdata.hughboi.cc
+        description: 10.10.10.10:3334
+        siteMonitor:  http://10.10.10.10:3334
+
+
+    - CAdvisor:
+        href: http://10.10.10.10:8081
+        description: 10.10.10.10:8081
+        icon: cadvisor.png
+        siteMonitor: http://10.10.10.10:8081
+
+
+    # - NodeJS:
+    #     href: https://nodejs.hughboi.cc
+    #     description: prometheus node exporter
+    #     icon: nodejs.png
+    #     siteMonitor: https://nodejs.hughboi.cc
+
+
+    - Ntfy:
+         href: https://ntfy.hughboi.cc
+         icon: ntfy-light.png
+         description: 10.10.10.10:8083
+         siteMonitor: https://ntfy.hughboi.cc
+        #  server: my-docker 
+        #  container: ntfy-server
+
+
+
+
+
+
+- Automation:
+    - Home Assistant:
+        href: https://homeassistant.hughboi.cc
+        description: 10.10.10.60:8123
+        siteMonitor: https://homeassistant.hughboi.cc 
+        icon: home-assistant.png
+
+
+    - Kestra:
+        icon: https://kestra-io.gallerycdn.vsassets.io/extensions/kestra-io/kestra/0.0.1/1692285562923/Microsoft.VisualStudio.Services.Icons.Default
+        href: https://kestra.hughboi.cc
+        siteMonitor: http://10.10.10.10:8090
+        description: 10.10.10.10:8090
+
+
+    - Ansible:
+        icon: ansible.png
+        href:
+        siteMonitor:
+        description:
+
+    
+    - Terraform:
+        icon: terraform.png
+        href:
+        siteMonitor:
+        description:
