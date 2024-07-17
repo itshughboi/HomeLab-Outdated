@@ -1,0 +1,52 @@
+title: Home
+# headerStyle: boxed
+theme: dark
+color: slate
+ # <----- add this line # <----- add this line
+hideVersion: true
+background:
+  image: https://1.bp.blogspot.com/-Sj30fJxXBPw/YJAbHiS7W-I/AAAAAAAAtZo/XhuWMIEq7G4fdjy2p3D46AzDmsiuHfPmwCLcBGAsYHQ/s0/203545.jpg
+  blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 70 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 50 # 0-100
+useEqualHeights: true
+statusStyle: "dot" #This can show ms if you clear this line out or you can change it to "basic" for UP or DOWN
+showStats: true
+hideErrors: false
+headerStyle: clean
+layout:
+  Management:
+    style: row
+    columns: 5
+  Networking:
+    style: row
+    columns: 5
+    icon: mdi-network-#FFFFFF
+      
+  Security:
+    # style: row
+    # columns: 5
+    icon: mdi-shield-lock-#FFFFFF
+  Monitoring:
+    # style: row
+    # columns: 5
+  icon: mdi-list-status-#FFFFFF
+# ^^^^  add the above block
+  Apps:
+    # style: row
+    # columns: 5
+
+
+  Data:
+    style: row
+    columns: 5
+    
+  
+  Automation:
+    style: row
+    columns: 5
+
+  providers:
+    openweathermap: openweathermapapikey
+    weatherapi: weatherapiapikey
