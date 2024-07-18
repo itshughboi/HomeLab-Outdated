@@ -8,6 +8,6 @@ services:
       - '81:81'
       - '443:443'
     volumes:
-      - /home/hughboi/npm/data:/data
-      - /home/hughboi/npm/letsencrypt:/etc/letsencrypt
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
     restart: unless-stopped  # Corrected indentation
