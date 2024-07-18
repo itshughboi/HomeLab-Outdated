@@ -5,7 +5,7 @@ services:
         ports:
             - 8765:80
         volumes:
-            - /home/hughboi/speedtest-tracker/config:/config
+            - ./speedtest-tracker/config:/config
         environment:
             - TZ=America/Denver
             - PGID=1000
