@@ -1,0 +1,21 @@
+title: Netdata
+theme: dark
+color: slate
+ # <----- add this line # <----- add this line
+hideVersion: true
+background:
+  image: 
+  blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 70 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 50 # 0-100
+useEqualHeights: true
+statusStyle: "dot" #This can show ms if you clear this line out or you can change it to "basic" for UP or DOWN
+showStats: false
+hideErrors: false
+headerStyle: clean
+
+layout:
+  Servers:
+    style: row
+    columns: 4
