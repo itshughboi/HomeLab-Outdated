@@ -1,0 +1,33 @@
+---
+
+
+- Servers:
+    - Production:
+        href: https://production.netdata.hughboi.cc
+        description: 10.10.10.10:19999
+        icon: ubuntu.png
+        siteMonitor: http://10.10.10.10.:19999
+    
+    - Staging:
+        href: https://staging.netdata.hughboi.cc
+        description: 10.10.10.20:19999
+        icon: ubuntu.png
+        siteMonitor: http://10.10.10.20:19999
+
+    - Dev:
+        href: https://dev.netdata.hughboi.cc
+        description: 10.10.10.30:19999
+        icon: ubuntu.png
+        siteMonitor: http://10.10.10.20:19999
+    
+    - Terraform:
+        href: https://terraform.netdata.hughboi.cc
+        description: 10.10.10.50:19999
+        icon: terraform.png
+        siteMonitor: http://10.10.10.50:19999
+
+    - Ansible:
+        href: https://ansible.netdata.hughboi.cc
+        description: 10.10.10.40:19999
+        icon: ansible.png
+        siteMonitor: http://10.10.10.40:19999
