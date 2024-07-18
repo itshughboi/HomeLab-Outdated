@@ -1,0 +1,36 @@
+version: v3
+teleport:
+  nodename: teleport.hughboi.cc
+  data_dir: /var/lib/teleport
+  log:
+    output: stderr
+    severity: INFO
+    format:
+      output: text
+auth_service:
+  enabled: yes
+  listen_addr: 0.0.0.0:3025
+  proxy_listener_mode: multiplex
+  cluster_name: teleport.hughboi.cc
+ssh_service:
+  enabled: no
+proxy_service:
+  enabled: yes
+  web_listen_addr: 0.0.0.0:3080
+  public_addr: teleport.hughboi.cc
+  https_keypairs: []
+  acme: {}
+
+#app_service:
+#  enabled: "yes"
+#  apps:
+#    - name: "pve-tower"
+#      uri: "https://10.10.10.2:8006"
+#      insecure_skip_verify: true 
+
+app_service:
+  enabled: "yes"
+  apps:
+    - name: "pve-srv-2"
+      uri: "https://10.10.10.3:8006"
+      insecure_skip_verify: true
