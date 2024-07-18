@@ -1,0 +1,12 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: netdata-dashboard
+    ports:
+      - 3334:3000
+    volumes:
+      - ./netdata-dashboard/config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
+    environment:
+      PUID: 1000
+      PGID: 1000
