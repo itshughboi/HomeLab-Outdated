@@ -6,8 +6,8 @@ services:
       - unifi
     restart: always
     volumes:
-      - ./unifi/db:/data/db
-      - ./unifi/dbcfg:/data/configdb
+      - ./mongo/db:/data/db
+      - ./mongo/dbcfg:/data/configdb
   controller:
     image: "jacobalberty/unifi:${TAG:-latest}"
     container_name: ${COMPOSE_PROJECT_NAME}_controller
