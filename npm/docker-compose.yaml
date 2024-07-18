@@ -1,0 +1,13 @@
+# version: '3.8'
+services:
+  npm:
+    image: 'docker.io/jc21/nginx-proxy-manager:latest'
+    container_name: npm
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - /home/hughboi/npm/data:/data
+      - /home/hughboi/npm/letsencrypt:/etc/letsencrypt
+    restart: unless-stopped  # Corrected indentation
