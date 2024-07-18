@@ -1,0 +1,14 @@
+
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    ports:
+      - 9103:80
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Denver
+    volumes:
+      - ./nextcloud/config:/config
+      - ./nextcloud/data:/data
+    restart: unless-stopped
