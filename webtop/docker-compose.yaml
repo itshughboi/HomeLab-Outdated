@@ -1,6 +1,6 @@
 services:
   webtop:
-    image: lscr.io/linuxserver/webtop:debian-kde
+    image: lscr.io/linuxserver/webtop:fedora-kde
     #version tag changes the linux image:
     #common tags:
       # fedora-kde
@@ -20,7 +20,7 @@ services:
      # - SUBFOLDER=/ #optional
      # - TITLE=Webtop #optional
     volumes:
-      - ./webtop/config:/config
+      - ./config:/config
       - /var/run/docker.sock:/var/run/docker.sock #optional
     ports:
       - 3310:3000 #HTTP
